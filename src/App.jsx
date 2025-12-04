@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './before/Navbar.jsx'
 import FeatureCards from './before/FeatureCards.jsx'
@@ -9,6 +7,7 @@ import MediaFeatureCards from './before/MediaFeatureCards.jsx'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Home from './after/home'
+import Steps from './after/Steps'
 // map `/login` to the existing SignIn page
 import Footer from './before/Footer.jsx'
 import { Routes, Route, useLocation } from 'react-router-dom'
@@ -44,6 +43,7 @@ function App() {
 
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/steps" element={<Steps />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<SignIn />} />
 

@@ -128,3 +128,31 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", 
 	.auth-left { min-width:unset }
 }
 
+/* Testimonial card specifics (quote-style cards) */
+.testimonial-card {
+	background: linear-gradient(180deg,#ffffff,#fbfdff);
+	border-radius: 12px;
+	padding: 16px;
+	border: 1px solid rgba(15,23,42,0.04);
+	box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+	transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.testimonial-card:focus,
+.testimonial-card:hover { transform: translateY(-6px); box-shadow: 0 20px 46px rgba(2,6,23,0.10); }
+.testimonial-card-inner { display:flex; gap:12px; align-items:flex-start }
+.testimonial-avatar { width:56px; height:56px; border-radius:9999px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; background:linear-gradient(180deg,#fff,#f7f9ff); box-shadow: 0 6px 14px rgba(12,17,31,0.04); color:var(--accent) }
+.testimonial-body { flex:1 }
+.testimonial-quote { margin:0 0 10px 0; font-size:0.98rem; color:#334155; line-height:1.4; quotes: "\201C" "\201D"; }
+.testimonial-quote:before { content: open-quote; margin-right:6px }
+.testimonial-meta { display:flex; gap:8px; align-items:center }
+.testimonial-name { color:#0b1220 }
+
+/* Responsive grid overrides for testimonial cards */
+@media (min-width: 640px) {
+	.ac-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+	.ac-benefits-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+	.testimonial-card { padding: 18px }
+}
+
