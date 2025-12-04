@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/one.jpg";
-/**
- * Single-file SignUp component with:
- * - background image + gradient overlay
- * - animated floating blobs
- * - subtle particle shimmer
- *
- * If the image doesn't appear, move the image to `public/` and change the image URL in CSS to:
- *   background-image: linear-gradient(...), url("/8966558e-4277-48dd-969b-b0f0d5d54478.png");
- */
+
 export default function SignUp() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
   const [password, setPassword] = useState("");
 
   // Automatically disable page scrolling while the sign-up page is mounted
@@ -322,6 +315,18 @@ export default function SignUp() {
                   value={email}
                   placeholder="Enter your email"
                   onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div className="field">
+                <label htmlFor="su-company">Company name</label>
+                <input
+                  id="su-company"
+                  type="text"
+                  value={company}
+                  placeholder="Your company or team"
+                  onChange={(e) => setCompany(e.target.value)}
                   required
                 />
               </div>

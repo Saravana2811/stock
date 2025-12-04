@@ -2,13 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Navbar from './components/Navbar.jsx'
-import FeatureCards from './components/FeatureCards'
-import Hero from './components/Hero'
-import MediaFeatureCards from './components/MediaFeatureCards'
+import Navbar from './before/Navbar.jsx'
+import FeatureCards from './before/FeatureCards.jsx'
+import Hero from './before/Hero.jsx'
+import MediaFeatureCards from './before/MediaFeatureCards.jsx'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
-import Footer from './components/Footer.jsx'
+import Home from './after/home'
+// map `/login` to the existing SignIn page
+import Footer from './before/Footer.jsx'
 import { Routes, Route, useLocation } from 'react-router-dom'
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
 
   const location = useLocation()
 
-  const hideNavPaths = ['/signin', '/signup']
+  const hideNavPaths = ['/signin', '/signup', '/home']
 
   return (
     <>
@@ -32,6 +34,9 @@ function App() {
                 <p className="section-sub">Quick Commerce operations: insights, allocation, and automation.</p>
               </div>
               <FeatureCards />
+              <div className="container">
+                <h2 className="section-title">What You Should Do</h2>
+                </div>
               <MediaFeatureCards />
             </main>
           }
@@ -39,6 +44,8 @@ function App() {
 
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<SignIn />} />
 
       </Routes>
 

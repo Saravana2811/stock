@@ -28,7 +28,7 @@ export default function SignIn() {
 
     // Simulate auth success
     setTimeout(() => {
-      navigate('/')
+      navigate('/home')
     }, 600)
   }
 
