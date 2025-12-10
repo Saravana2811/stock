@@ -8,7 +8,6 @@ import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Home from './after/home'
 import Steps from './after/Steps'
-// map `/login` to the existing SignIn page
 import Footer from './before/Footer.jsx'
 import { Routes, Route, useLocation } from 'react-router-dom'
 
